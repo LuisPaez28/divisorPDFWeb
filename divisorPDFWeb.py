@@ -60,7 +60,6 @@ def procesar_pdf_en_memoria(archivo_upload):
 st.title("📄 Separador de PDF Web")
 st.markdown("""
 Sube tu archivo PDF y obtén un **ZIP** con todas las páginas separadas al instante.
-*Procesado en memoria RAM para máxima velocidad.*
 """)
 
 uploaded_file = st.file_uploader("Arrastra tu PDF aquí", type="pdf")
@@ -69,7 +68,7 @@ if uploaded_file is not None:
     # Verificamos si tiene páginas (por si acaso es un archivo corrupto)
     try:
         # Botón de acción
-        if st.button("✂️ Separar Páginas", type="primary"):
+        if st.button("Separar Páginas del PDF", type="primary"):
             with st.spinner('Trabajando en tu archivo...'):
                 zip_resultado, num_paginas = procesar_pdf_en_memoria(uploaded_file)
             
@@ -88,4 +87,4 @@ if uploaded_file is not None:
 
 # Footer simple
 st.markdown("---")
-st.caption("Desarrollado con Python y Streamlit")
+st.caption("Desarrollado por LP")
